@@ -43,7 +43,9 @@ Follow the prompts:
  ##  🧠 Powered By
 
 🗺️ LangGraph
+
 💬 LangChain
+
 🔗 YouTube Transcript API
 
  ## 🎯 Why It's Impressive
@@ -58,6 +60,8 @@ This project showcases:
   ## 💡 Ideas for Extension
 
 🔥 Add Triton-accelerated summarization kernel
+
 📊 Visual summary dashboards (Gradio)
+
 🎯 Fine-tune controller logic based on video category
 
