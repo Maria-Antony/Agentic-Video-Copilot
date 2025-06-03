@@ -29,14 +29,15 @@ def build_graph():
     builder.add_edge("fetch", "chunk")
     builder.add_edge("chunk", "controller")
     builder.add_conditional_edges(
-        "controller",
-        condition=lambda x: x["mode"],
-        path_map={
-            "summary": "summarize_chunks_node",
-            "timeline": "timeline_node",
-            "qa": "qa"
-        }
-    )
+    "controller",
+    lambda x: x["mode"],
+    {
+        "summary": "summarize_chunks_node",
+        "timeline": "timeline_node",
+        "qa": "qa"
+    }
+)
+
     builder.add_edge("summarize_chunks_node", END)
     builder.add_edge("timeline_node", END)
     builder.add_edge("qa", END)
