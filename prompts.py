@@ -1,7 +1,21 @@
-def controller(x):
-    print("\n🤖 What do you want to do?")
-    print("[1] Summary")
-    print("[2] Timeline summary")
-    print("[3] Ask a question")
-    choice = input("Choose 1 / 2 / 3: ")
-    return {"mode": {"1": "summary", "2": "timeline", "3": "qa"}.get(choice, "summary")}
+from langchain.prompts import PromptTemplate
+
+SUMMARY_PROMPT = PromptTemplate.from_template("""
+You are a helpful summarizer. Summarize the following transcript:
+
+{text}
+
+Summary:
+""")
+
+TIMELINE_PROMPT = PromptTemplate.from_template("""
+Create a bulleted summary with timestamps based on the video transcript.
+Respond like:
+- [00:00] Intro...
+- [01:30] Key point...
+
+Text:
+{text}
+
+Timeline:
+""")
