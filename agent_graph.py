@@ -21,7 +21,7 @@ def build_graph():
     builder.add_node("fetch", lambda x: {"transcript": fetch_transcript(x["video_id"])})
     builder.add_node("chunk", lambda x: {"chunks": chunk_text(x["transcript"])})
     builder.add_node("controller", controller)
-    builder.add_node("summary", summarize_chunks)
+    builder.add_node("summarize_chunks_node", summarize_chunks)
     builder.add_node("timeline", summarize_timeline)
     builder.add_node("qa", answer_question)
 
@@ -32,12 +32,12 @@ def build_graph():
         "controller",
         condition=lambda x: x["mode"],
         path_map={
-            "summary": "summary",
+            "summary": "summarize_chunks_node",
             "timeline": "timeline",
             "qa": "qa"
         }
     )
-    builder.add_edge("summary", END)
+    builder.add_edge("summarize_chunks_node", END)
     builder.add_edge("timeline", END)
     builder.add_edge("qa", END)
     return builder.compile()
