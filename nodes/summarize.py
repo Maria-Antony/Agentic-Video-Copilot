@@ -9,9 +9,12 @@ import os
 
 llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo", openai_api_key=os.environ.get("OPENAI_API_KEY"))
 
+from langchain.schema import Document
+
 def summarize_chunks(x):
+    docs = [Document(page_content=chunk) for chunk in x["chunks"]]
     chain = load_summarize_chain(llm, chain_type="map_reduce", map_prompt=SUMMARY_PROMPT)
-    return {"summary": chain.run(x["chunks"])}
+    return {"summary": chain.run(docs)}
 
 def summarize_timeline(x):
     chain = load_summarize_chain(llm, chain_type="stuff", prompt=TIMELINE_PROMPT)
