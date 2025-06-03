@@ -4,7 +4,8 @@ from utils import extract_video_id
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="key.env")
 
 if __name__ == "__main__":
     raw_input = input("🎥 Enter YouTube Video ID or URL: ")
