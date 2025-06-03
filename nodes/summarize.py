@@ -3,6 +3,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from langchain_community.chat_models import ChatOpenAI
 from langchain.chains.summarize import load_summarize_chain
+from langchain_openai import ChatOpenAI
 from prompts import SUMMARY_PROMPT, TIMELINE_PROMPT
 import os
 
