@@ -83,4 +83,4 @@ This demonstrates **Agentic AI**, **RAG**, and simple session orchestration — 
 
 ![Main Page](images/Img1.png)
 ![Summary](images/Img2.png)
-![Q&A & Sidebar](images/Img3.png)
+![Q&A & Sidebar](images/Image3.png)
