@@ -1,0 +1,7 @@
+streamlit
+openai
+pytube
+youtube-transcript-api
+serpapi
+fpdf
+python-dotenv
