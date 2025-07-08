@@ -6,7 +6,7 @@ from agents.qa_agent import answer_question
 from typing_extensions import TypedDict
 import os
 
-# --- State ---
+#  State
 class VideoGraphState(TypedDict):
     url: str | None
     file_path: str | None
@@ -20,7 +20,7 @@ class VideoGraphState(TypedDict):
     style: str
     language: str
 
-# --- Nodes ---
+# Nodes 
 def transcriber_node(state: VideoGraphState) -> VideoGraphState:
     url = state.get("url")
     file_path = state.get("file_path")
@@ -64,7 +64,7 @@ def qa_node(state: VideoGraphState) -> VideoGraphState:
     state["last_answer"] = answer
     return state
 
-# --- Graph ---
+# Graph 
 workflow = StateGraph(VideoGraphState)
 
 workflow.add_node("Transcriber", transcriber_node)
