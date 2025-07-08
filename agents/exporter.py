@@ -15,9 +15,8 @@ def save_as_txt(entry_id, summary, resources):
 def save_as_pdf(entry_id, summary, resources):
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font("Arial", size=12)   # ✅ Built-in font
+    pdf.set_font("Arial", size=12) 
 
-    # Clean text: remove fancy Unicode chars that break Latin-1
     def safe_text(s):
         return s.encode('latin-1', 'ignore').decode('latin-1')
 
