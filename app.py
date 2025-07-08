@@ -145,7 +145,7 @@ if "summary" in st.session_state and st.session_state.summary:
             "transcript": None,
             "summary": st.session_state.summary,
             "resources": st.session_state.resources,
-            "question": question,  # 👈 user question
+            "question": question,  # user question
             "last_answer": None,
             "qa_log": st.session_state.qa_log,
             "length": "",
