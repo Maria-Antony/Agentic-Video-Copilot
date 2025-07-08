@@ -1,4 +1,4 @@
-# 🎥 Agentic RAG Video Copilot
+# 🎥 Agentic Video Copilot
 
 An **AI-powered Agentic Copilot** for video summarization, resource recommendation, and interactive Q&A — all orchestrated with multiple lightweight LLM “agents” using Streamlit and local session memory.
 
@@ -6,7 +6,7 @@ An **AI-powered Agentic Copilot** for video summarization, resource recommendati
 
 ## 📌 **Description**
 
-**Agentic RAG Video Copilot** is an interactive tool where users can:
+**Agentic Video Copilot** is an interactive tool where users can:
 - **Upload a video file** or **provide a YouTube URL**
 - Automatically **transcribe the audio**
 - Generate a **summary** in any **target language**
