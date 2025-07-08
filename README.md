@@ -8,13 +8,13 @@ An **AI-powered Agentic Copilot** for video summarization, resource recommendati
 
 **Agentic Video Copilot** is an interactive tool where users can:
 
-->Upload a video file or provide a YouTube URL
-->Automatically transcribe the audio
-->Generate a summary in any target language
-->Get GPT-generated learning resources (RAG style) related to the video content
-->Download the output as .txt and .pdf reports
-->Ask follow-up questions in the same language through an integrated Q&A agent
-->Keep a persistent session history, saved locally (/sessions/), visible in the sidebar — just like a chat log
+1. Upload a video file or provide a YouTube URL.
+2. Automatically transcribe the audio.
+3. Generate a summary in any target language.
+4. Get GPT-generated learning resources (RAG style) related to the video content.
+5. Download the output as .txt and .pdf reports.
+6. Ask follow-up questions in the same language through an integrated Q&A agent.
+7. Keep a persistent session history, saved locally (/sessions/), visible in the sidebar — just like a chat log.
 
 This project demonstrates LangGraph-based Agentic AI, RAG workflows, and modular multi-agent orchestration — showcasing how LLM pipelines can power real user-facing products.
 
@@ -22,12 +22,12 @@ This project demonstrates LangGraph-based Agentic AI, RAG workflows, and modular
 
 ## ⚙️ **Methodology**
 
-->**LangGraph Orchestration:** All tasks (Transcriber, Summarizer, RAG, Q&A) are wired as separate nodes in a single LangGraph StateGraph, passing context (TypedDict) step by step.
-->**Transcriber Agent:** Extracts audio and transcripts using YouTube transcripts or fallback ASR.
-->**Summarizer Agent:** Condenses raw text into a clear summary, in any target language.
-->**RAG Agent:** Uses GPT to generate realistic, helpful resources, tutorials, or learning references related to the video.
-->**Q&A Agent:** Lets users ask questions about the video; answers are generated with GPT using the stored summary and resources.
-->**Persistent Session Storage:** Each run (summary, resources, Q&A log) is stored as a JSON file in /sessions/ so history survives page refresh or app restart.
+1. **LangGraph Orchestration:** All tasks (Transcriber, Summarizer, RAG, Q&A) are wired as separate nodes in a single LangGraph StateGraph, passing context (TypedDict) step by step.
+2. **Transcriber Agent:** Extracts audio and transcripts using YouTube transcripts or fallback ASR.
+3. **Summarizer Agent:** Condenses raw text into a clear summary, in any target language.
+4. **RAG Agent:** Uses GPT to generate realistic, helpful resources, tutorials, or learning references related to the video.
+5. **Q&A Agent:** Lets users ask questions about the video; answers are generated with GPT using the stored summary and resources.
+6. **Persistent Session Storage:** Each run (summary, resources, Q&A log) is stored as a JSON file in /sessions/ so history survives page refresh or app restart.
 
 ---
 
