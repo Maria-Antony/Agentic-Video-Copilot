@@ -9,7 +9,7 @@ from agents.disk import save_session_to_disk, load_sessions_from_disk
 
 load_dotenv()
 
-st.set_page_config(page_title="Agentic RAG Copilot", page_icon="🎥")
+st.set_page_config(page_title="Agentic Video Copilot", page_icon="🎥")
 
 # === Init session ===
 if "qa_log" not in st.session_state:
@@ -46,7 +46,7 @@ with st.sidebar:
         st.info("No saved sessions yet.")
 
 # === Main ===
-st.title("🎥 Agentic RAG Video Copilot")
+st.title("🎥 Agentic Video Copilot")
 st.write("Upload or link a video → get a summary, learning resources & live Q&A.")
 
 option = st.radio("Input Type", ["YouTube URL", "Upload Video"])
@@ -74,7 +74,7 @@ style = st.selectbox("Summary Style", ["paragraph", "notes"])
 
 # === Process button: runs full graph ===
 if st.button("🚀 Process"):
-    with st.spinner("⏳ Running full LangGraph pipeline..."):
+    with st.spinner("⏳ Processing"):
         file_path = None
         if video_file:
             save_path = os.path.join("uploads", video_file.name)
