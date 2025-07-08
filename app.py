@@ -3,7 +3,7 @@ import os
 import uuid
 from dotenv import load_dotenv
 
-from graph import compiled_graph  # ✅ your compiled LangGraph
+from graph import compiled_graph  
 from agents.exporter import save_as_txt, save_as_pdf
 from agents.disk import save_session_to_disk, load_sessions_from_disk
 
@@ -17,7 +17,7 @@ if "qa_log" not in st.session_state:
 
 history_list = load_sessions_from_disk()
 
-# === Sidebar: always shows session history ===
+
 with st.sidebar:
     st.title("📑 Session History")
 
@@ -45,7 +45,7 @@ with st.sidebar:
     else:
         st.info("No saved sessions yet.")
 
-# === Main ===
+# Main 
 st.title("🎥 Agentic Video Copilot")
 st.write("Upload or link a video → get a summary, learning resources & live Q&A.")
 
@@ -72,7 +72,7 @@ else:
 length = st.selectbox("Summary Length", ["short", "medium", "long"])
 style = st.selectbox("Summary Style", ["paragraph", "notes"])
 
-# === Process button: runs full graph ===
+# Process button: runs full graph 
 if st.button("🚀 Process"):
     with st.spinner("⏳ Processing"):
         file_path = None
@@ -133,7 +133,7 @@ if st.button("🚀 Process"):
     with open(pdf_path, "rb") as f:
         st.download_button("⬇️ Download PDF", f, file_name="summary.pdf")
 
-# === Q&A Node: re-invoke graph with question ===
+# Q&A Node: re-invoke graph with question 
 if "summary" in st.session_state and st.session_state.summary:
     st.subheader(f"💬 Ask a question in {st.session_state.language}")
     question = st.text_input("Your question:")
